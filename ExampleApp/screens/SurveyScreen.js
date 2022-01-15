@@ -229,12 +229,12 @@ export default class SurveyScreen extends Component {
     }
 
     onSurveyFinished(answers) {
-        /** 
+        /**
          *  By using the spread operator, array entries with no values, such as info questions, are removed.
          *  This is also where a final cleanup of values, making them ready to insert into your DB or pass along
          *  to the rest of your code, can be done.
-         * 
-         *  Answers are returned in an array, of the form 
+         *
+         *  Answers are returned in an array, of the form
          *  [
          *  {questionId: string, value: any},
          *  {questionId: string, value: any},
@@ -242,16 +242,16 @@ export default class SurveyScreen extends Component {
          *  ]
          *  Questions of type selection group are more flexible, the entirity of the 'options' object is returned
          *  to you.
-         *  
+         *
          *  As an example
-         *  { 
-         *      questionId: "favoritePet", 
-         *      value: { 
+         *  {
+         *      questionId: "favoritePet",
+         *      value: {
          *          optionText: "Dogs",
          *          value: "dog"
          *      }
          *  }
-         *  This flexibility makes SelectionGroup an incredibly powerful component on its own. If needed it is a 
+         *  This flexibility makes SelectionGroup an incredibly powerful component on its own. If needed it is a
          *  separate NPM package, react-native-selection-group, which has additional features such as multi-selection.
          */
 
@@ -265,8 +265,8 @@ export default class SurveyScreen extends Component {
     }
 
     /**
-     *  After each answer is submitted this function is called. Here you can take additional steps in response to the 
-     *  user's answers. From updating a 'correct answers' counter to exiting out of an onboarding flow if the user is 
+     *  After each answer is submitted this function is called. Here you can take additional steps in response to the
+     *  user's answers. From updating a 'correct answers' counter to exiting out of an onboarding flow if the user is
      *  is restricted (age, geo-fencing) from your app.
      */
     onAnswerSubmitted(answer) {
@@ -334,7 +334,7 @@ export default class SurveyScreen extends Component {
                     title={data.optionText}
                     onPress={onPress}
                     color={isSelected ? GREEN : PURPLE}
-                    style={isSelected ? { fontWeight: 'bold' } : {}} 
+                    style={isSelected ? { fontWeight: 'bold' } : {}}
                     key={`button_${index}`}
                 />
             </View>
@@ -370,7 +370,7 @@ export default class SurveyScreen extends Component {
     }
 
     renderNumericInput(onChange, value, placeholder, onBlur) {
-        return (<TextInput 
+        return (<TextInput
             style={styles.numericInput}
             onChangeText={text => { onChange(text); }}
             underlineColorAndroid={'white'}
@@ -412,14 +412,14 @@ export default class SurveyScreen extends Component {
                         renderNumericInput={this.renderNumericInput}
                         renderInfo={this.renderInfoText}
                     />
-                    
+
                 </View>
-                
+
                 <ScrollView style={styles.answersContainer}>
                     <Text style={{textAlign:'center'}}>JSON output</Text>
                     <Text>{this.state.answersSoFar}</Text>
                 </ScrollView>
-                
+
             </View>
         );
     }
@@ -439,10 +439,10 @@ const styles = StyleSheet.create({
         maxWidth: '90%',
         alignItems: 'stretch',
         justifyContent: 'center',
-        
-        
+
+
         borderRadius: 10,
-        flex: 1, 
+        flex: 1,
     },
     answersContainer: {
         width: '90%',
@@ -477,8 +477,8 @@ const styles = StyleSheet.create({
         margin: 10,
         fontSize: 20,
         color: 'white',
-        
-        
+
+
         width: 'auto'
     },
     answers: {
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
     navigationButton: {
-        
+
         minHeight: 40,
         backgroundColor: GREEN,
         padding: 0,
@@ -495,7 +495,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    
+
     background: {
         flex: 1,
         justifyContent: 'center',
@@ -510,7 +510,7 @@ const styles = StyleSheet.create({
         borderColor: 'rgba(204,204,204,1)',
         backgroundColor: 'white',
         borderRadius: 10,
-        
+
         padding: 10,
         textAlignVertical: 'top',
         marginLeft: 10,

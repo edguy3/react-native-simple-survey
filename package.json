@@ -25,13 +25,16 @@
   },
   "homepage": "https://github.com/devlinb/react-native-simple-survey#readme",
   "peerDependencies": {
-    "react": ">=15.0.0",
-    "react-native": ">=0.50.0"
+    "react": "^17.0.1",
+    "react-native": "^0.64.2"
   },
   "devDependencies": {
-    "eslint": "^5.14.1"
+    "eslint": "^7.32.0",
+    "flow-bin": "^0.137.0"
   },
   "dependencies": {
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.2.2",
     "react-native-selection-group": "^2.0.0"
   }
 }
