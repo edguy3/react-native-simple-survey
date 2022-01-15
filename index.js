@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 
 import SelectionGroup, { SelectionHandler } from 'react-native-selection-group';
 
-const stylePropType = require('react-native-style-prop-type');
+const stylePropType = require('react-style-proptype');
 export class SimpleSurvey extends Component {
     static propTypes = {
         survey: PropTypes.arrayOf(
